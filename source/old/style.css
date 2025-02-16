@@ -1,0 +1,10 @@
+#container {
+    width: 95vw !important;
+    height: 90vh !important;
+    margin: 0 auto;
+}
+
+.highcharts-exporting-group,
+.highcharts-credits {
+    display: none !important;
+}
