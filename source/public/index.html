@@ -25,10 +25,11 @@
     <title>Codeino</title>
   </head>
 
-  <body class="text-center p-5">
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
+  <body>
+    <div class="container text-center">
+      <noscript>You need to enable JavaScript to run this app.</noscript>
+      <div id="root"></div>
+      <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
 
@@ -38,6 +39,34 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    </div>
+
+    <style>
+      body {
+        background-color: #0e1527;
+      }
+
+      h1 {
+        font-size: 4.5rem;
+      }
+
+      p {
+        line-height: 3rem !important
+      }
+
+      .cats-container a {
+        border: 1px solid red;
+      }
+
+      .cats-container a {
+        transition: 0.3s;
+      }
+
+      .cats-container a:hover {
+        border-color: #fff !important;
+        color: #fff !important;
+      }
+    </style>
   </body>
 
 </html>
