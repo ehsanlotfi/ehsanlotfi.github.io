@@ -1,0 +1,26 @@
+[
+    {
+        "name": "MySQL",
+        "value": 10
+    },
+    {
+        "name": "PostgreSQL",
+        "value": 10
+    },
+    {
+        "name": "MongoDB",
+        "value": 10
+    },
+    {
+        "name": "SQL Server",
+        "value": 10
+    },
+    {
+        "name": "Oracle Database",
+        "value": 10
+    },
+    {
+        "name": "NoSQL Databases",
+        "value": 10
+    }
+]

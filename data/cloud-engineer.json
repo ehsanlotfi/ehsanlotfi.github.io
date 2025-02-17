@@ -1,0 +1,26 @@
+[
+    {
+        "name": "AWS",
+        "value": 10
+    },
+    {
+        "name": "Azure",
+        "value": 10
+    },
+    {
+        "name": "Google Cloud",
+        "value": 10
+    },
+    {
+        "name": "Docker",
+        "value": 10
+    },
+    {
+        "name": "Kubernetes",
+        "value": 10
+    },
+    {
+        "name": "Terraform",
+        "value": 10
+    }
+]

@@ -1,0 +1,32 @@
+[
+    {
+        "name": "Docker Compose",
+        "repo": "docker/compose",
+        "value": 10
+    },
+    {
+        "name": "Kubernetes",
+        "repo": "kubernetes/kubernetes",
+        "value": 10
+    },
+    {
+        "name": "Jenkins",
+        "repo": "jenkinsci/jenkins",
+        "value": 10
+    },
+    {
+        "name": "Ansible",
+        "repo": "ansible/ansible",
+        "value": 10
+    },
+    {
+        "name": "Terraform",
+        "repo": "hashicorp/terraform",
+        "value": 10
+    },
+    {
+        "name": "AWS Cli",
+        "repo": "aws/aws-cli",
+        "value": 10
+    }
+]

@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Arduino",
+        "value": 10
+    },
+    {
+        "name": "Raspberry Pi",
+        "value": 10
+    },
+    {
+        "name": "Microcontrollers",
+        "value": 10
+    },
+    {
+        "name": "Firmware Development",
+        "value": 10
+    },
+    {
+        "name": "Embedded C",
+        "value": 10
+    },
+    {
+        "name": "RTOS",
+        "value": 10
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "name": "TensorFlow",
+        "repo": "tensorflow/tensorflow",
+        "value": 10
+    },
+    {
+        "name": "PyTorch github",
+        "repo": "pytorch/pytorch",
+        "value": 10
+    },
+    {
+        "name": "Scikit-Learn github",
+        "repo": "scikit-learn/scikit-learn",
+        "value": 10
+    }
+]

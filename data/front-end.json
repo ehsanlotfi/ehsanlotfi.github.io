@@ -1,0 +1,42 @@
+[
+    {
+        "name": "React",
+        "repo": "facebook/react",
+        "value": 10
+    },
+    {
+        "name": "Angular",
+        "repo": "angular/angular",
+        "value": 10
+    },
+    {
+        "name": "Vue",
+        "repo": "vuejs/vue",
+        "value": 10
+    },
+    {
+        "name": "Svelte",
+        "repo": "sveltejs/svelte",
+        "value": 10
+    },
+    {
+        "name": "Preact",
+        "repo": "preactjs/preact",
+        "value": 10
+    },
+    {
+        "name": "Ember",
+        "repo": "emberjs/ember.js",
+        "value": 10
+    },
+    {
+        "name": "Solid",
+        "repo": "solidjs/solid",
+        "value": 10
+    },
+    {
+        "name": "Lit",
+        "repo": "lit/lit",
+        "value": 10
+    }
+]
