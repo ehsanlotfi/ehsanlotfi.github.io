@@ -1,3 +1,5 @@
+import { BrowserRouter as Router, Link } from "react-router-dom";
+
 function App()
 {
 
@@ -66,10 +68,8 @@ function App()
         {cats.map((item, index) =>
         {
           return (
-            <div className="col-md-4 col-sm-12 mb-3">
-              <a href={item.path} className="p-4 d-block border border-secondary  rounded-1 text-decoration-none text-white-50" key={index} >
-                {item.title}
-              </a>
+            <div className="col-md-4 col-sm-12 mb-3" key={index} >
+              <Link className="p-4 d-block border border-secondary  rounded-1 text-decoration-none text-white-50" to={`/tree/${item.path}`}>{item.title}</Link>
             </div>
           )
         })}
