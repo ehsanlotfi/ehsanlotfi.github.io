@@ -49,12 +49,12 @@ function App()
       "path": "database-administrator"
     },
     {
-      "title": "Blockchain Developer",
-      "path": "blockchain-developer"
+      "title": "Blockchain",
+      "path": "blockchain"
     },
     {
-      "title": "AR/VR Developer",
-      "path": "ar-vr-developer"
+      "title": "AR/VR",
+      "path": "ar-vr"
     }
   ];
 

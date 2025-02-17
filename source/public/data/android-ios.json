@@ -1,0 +1,37 @@
+[
+    {
+        "name": "Flutter",
+        "repo": "flutter/flutter",
+        "value": 10
+    },
+    {
+        "name": "React Native",
+        "repo": "facebook/react-native",
+        "value": 10
+    },
+    {
+        "name": "Kotlin",
+        "repo": "JetBrains/kotlin",
+        "value": 10
+    },
+    {
+        "name": "Swift",
+        "repo": "apple/swift",
+        "value": 10
+    },
+    {
+        "name": "NativeScript",
+        "repo": "NativeScript/NativeScript",
+        "value": 10
+    },
+    {
+        "name": "Ionic",
+        "repo": "ionic-team/ionic-framework",
+        "value": 10
+    },
+    {
+        "name": "Xamarin",
+        "repo": "xamarin/Xamarin.Forms",
+        "value": 10
+    }
+]

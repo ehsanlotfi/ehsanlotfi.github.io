@@ -1,0 +1,31 @@
+[
+    {
+        "name": "Selenium",
+        "repo": "SeleniumHQ/selenium",
+        "value": 10
+    },
+    {
+        "name": "JUnit",
+        "repo": "junit-team/junit4",
+        "value": 10
+    },
+    {
+        "name": "TestNG",
+        "repo": "testng-team/testng",
+        "value": 10
+    },
+    {
+        "name": "Cypress",
+        "repo": "cypress-io/cypress",
+        "value": 10
+    },
+    {
+        "name": "JIRA",
+        "value": 10
+    },
+    {
+        "name": "Appium",
+        "repo": "appium/appium",
+        "value": 10
+    }
+]

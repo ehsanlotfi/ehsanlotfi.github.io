@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { useParams } from "react-router-dom";
 import Highcharts from "highcharts";
 import TreemapModule from "highcharts/modules/treemap";
+import { Link } from "react-router-dom";
 
 if (typeof TreemapModule === "function")
 {
@@ -197,8 +198,8 @@ const TreeChart = () =>
 
     return (
         <div>
-            <h2>Developer Tree Map</h2>
-            <div ref={chartContainerRef}></div>
+            <Link className="back-btn" to={'/'}>⮈</Link>
+            <div className="chart-container" ref={chartContainerRef}></div>
         </div>
     );
 };
