@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 import Highcharts from "highcharts";
 import TreemapModule from "highcharts/modules/treemap";
 import { Link } from "react-router-dom";
+import { Offcanvas } from "bootstrap";
+import MarkdownRenderer from "./MarkdownRenderer";
 
 if (typeof TreemapModule === "function")
 {
@@ -59,9 +61,19 @@ const TreeChart = () =>
 {
     const [chartData, setChartData] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [markdownUrl, setMarkdownUrl] = useState(true);
 
     const { category } = useParams();
     const chartContainerRef = useRef(null);
+
+    const offcanvasRef = useRef(null);
+
+    const toggleOffcanvas = (fullName) =>
+    {
+        setMarkdownUrl(`https://raw.githubusercontent.com/${fullName}/main/README.md`);
+        const offcanvas = new Offcanvas(offcanvasRef.current);
+        offcanvas.toggle();
+    };
 
     useEffect(() =>
     {
@@ -77,6 +89,13 @@ const TreeChart = () =>
                 const repos = data
                     .filter((f) => f && f.repo)
                     .map((f) => `repo:${f.repo}`);
+                let flatData = flattenNestedItemsWithParentPath(data);
+                let colorsIndex = [
+                    ...new Set(flatData.filter((f) => f.parent.length === 36).map((f) => f.parent)),
+                ];
+
+                // setChartData(flatData);
+                // setLoading(false);
 
                 return fetch(
                     `https://api.github.com/search/repositories?q=${repos.join("+")}&sort=stars&order=desc&per_page=${repos.length}`,
@@ -85,11 +104,6 @@ const TreeChart = () =>
                     .then((res) => res.json())
                     .then((result) =>
                     {
-                        let flatData = flattenNestedItemsWithParentPath(data);
-                        let colorsIndex = [
-                            ...new Set(flatData.filter((f) => f.parent.length === 36).map((f) => f.parent)),
-                        ];
-
                         flatData.forEach((element) =>
                         {
                             const foundRepo = result.items.find((f) => element.repo === f.full_name);
@@ -103,9 +117,9 @@ const TreeChart = () =>
                         });
 
                         setChartData(flatData);
-
                         setLoading(false);
                     });
+
             })
             .catch((error) =>
             {
@@ -116,6 +130,9 @@ const TreeChart = () =>
 
     useEffect(() =>
     {
+
+        const toggleOffcanvasRef = toggleOffcanvas;
+
         if (!chartContainerRef.current) return;
 
         const chart = Highcharts.chart(chartContainerRef.current, {
@@ -150,6 +167,17 @@ const TreeChart = () =>
                 style: { color: "#ffffff" }
             },
             plotOptions: {
+                series: {
+                    events: {
+                        click: function (event)
+                        {
+                            if (toggleOffcanvasRef)
+                            {
+                                toggleOffcanvasRef(event.point.meta.full_name);
+                            }
+                        }
+                    }
+                },
                 treemap: {
                     borderColor: "#666"
                 }
@@ -199,7 +227,29 @@ const TreeChart = () =>
     return (
         <div>
             <Link className="back-btn" to={'/'}>⮈</Link>
-            <div className="chart-container" ref={chartContainerRef}></div>
+            {loading ? (
+                <div className="chart-loading-container">
+                    <img src="/loading.gif"></img>
+                </div>
+            ) : (
+                <>
+                    <div className="chart-container" ref={chartContainerRef}></div>
+                    <div
+                        ref={offcanvasRef}
+                        className="offcanvas offcanvas-end"
+                        tabIndex="-1"
+                        id="offcanvasRight"
+                        aria-labelledby="offcanvasRightLabel"
+                    >
+                        <div className="offcanvas-header">
+                            <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        </div>
+                        <div className="offcanvas-body p-0">
+                            <MarkdownRenderer url={markdownUrl} />
+                        </div>
+                    </div>
+                </>
+            )}
         </div>
     );
 };
