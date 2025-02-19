@@ -226,7 +226,7 @@ const TreeChart = () =>
 
     return (
         <div>
-            <Link className="back-btn" to={'/'}>⮈</Link>
+            <Link className="back-btn" to={'/'}><img src="/back-icon.png"></img></Link>
             {loading ? (
                 <div className="chart-loading-container">
                     <img src="/loading.gif"></img>
