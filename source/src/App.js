@@ -74,6 +74,9 @@ function App()
           )
         })}
       </div>
+      <div className="mt-5 mb-3">
+        <a className="text-decoration-none text-white h6" href="https://www.linkedin.com/in/ehsan-lotfinia/" target="_blank">@ Ehsan Lotfinia</a>
+      </div>
     </div>
   );
 }

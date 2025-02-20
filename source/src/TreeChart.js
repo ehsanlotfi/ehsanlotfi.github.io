@@ -86,9 +86,20 @@ const TreeChart = () =>
                     headers: { Accept: "application/vnd.github.v3+json" },
                 };
 
-                const repos = data
-                    .filter((f) => f && f.repo)
-                    .map((f) => `repo:${f.repo}`);
+                var repos = [];
+                if (data[0].children && data[0].children.length)
+                {
+                    repos = data
+                        .map(f => f.children).flat()
+                        .filter((f) => f && f.repo)
+                        .map((f) => `repo:${f.repo}`);
+                } else
+                {
+                    repos = data
+                        .filter((f) => f && f.repo)
+                        .map((f) => `repo:${f.repo}`);
+                }
+
                 let flatData = flattenNestedItemsWithParentPath(data);
                 let colorsIndex = [
                     ...new Set(flatData.filter((f) => f.parent.length === 36).map((f) => f.parent)),
@@ -171,7 +182,7 @@ const TreeChart = () =>
                     events: {
                         click: function (event)
                         {
-                            if (toggleOffcanvasRef)
+                            if (toggleOffcanvasRef && !(event.point && event.point.children && event.point.children.length))
                             {
                                 toggleOffcanvasRef(event.point.meta.full_name);
                             }
@@ -210,12 +221,7 @@ const TreeChart = () =>
                 accessibility: {
                     exposeAsGroupOnly: true
                 },
-                data: chartData.map((item, index) => ({
-                    ...item,
-                    color: Highcharts.color(Highcharts.getOptions().colors[index % Highcharts.getOptions().colors.length])
-                        .brighten(Math.random() * 0.5 - 0.25) // Random brightness variation
-                        .get()
-                })),
+                data: chartData
             }]
         }
 
