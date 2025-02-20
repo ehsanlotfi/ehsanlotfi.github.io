@@ -2,191 +2,278 @@
     {
         "id": "frameworks",
         "name": "JavaScript Frameworks",
-        "color": "#FF5733"
+        "color": "#009688",
+        "children": [
+            {
+                "name": "React",
+                "value": 10,
+                "parent": "frameworks",
+                "repo": "facebook/react"
+            },
+            {
+                "name": "Angular",
+                "value": 10,
+                "parent": "frameworks",
+                "repo": "angular/angular"
+            },
+            {
+                "name": "Vue JS",
+                "value": 10,
+                "parent": "frameworks",
+                "repo": "vuejs/vue"
+            },
+            {
+                "name": "Svelte",
+                "value": 10,
+                "parent": "frameworks",
+                "repo": "sveltejs/svelte"
+            },
+            {
+                "name": "Ember",
+                "repo": "emberjs/ember.js",
+                "parent": "frameworks",
+                "value": 10
+            },
+            {
+                "name": "Solid",
+                "repo": "solidjs/solid",
+                "parent": "frameworks",
+                "value": 10
+            },
+            {
+                "name": "Lit",
+                "repo": "lit/lit",
+                "parent": "frameworks",
+                "value": 10
+            },
+            {
+                "name": "Preact",
+                "value": 10,
+                "parent": "frameworks",
+                "repo": "preactjs/preact"
+            },
+            {
+                "name": "Qwik",
+                "value": 10,
+                "parent": "frameworks",
+                "repo": "QwikDev/qwik"
+            },
+            {
+                "name": "Alpine",
+                "value": 10,
+                "parent": "frameworks",
+                "repo": "alpinejs/alpine"
+            },
+            {
+                "name": "Stencil",
+                "value": 10,
+                "parent": "frameworks",
+                "repo": "ionic-team/stencil"
+            }
+        ]
     },
     {
         "id": "meta-frameworks",
         "name": "Meta Frameworks",
-        "color": "#33FF57",
-        "parent": "frameworks"
+        "color": "#8BC34A",
+        "children": [
+            {
+                "name": "Next.js",
+                "value": 10,
+                "parent": "meta-frameworks",
+                "repo": "vercel/next.js"
+            },
+            {
+                "name": "Nuxt.js",
+                "value": 10,
+                "parent": "meta-frameworks",
+                "repo": "nuxt/nuxt"
+            },
+            {
+                "name": "Remix",
+                "value": 10,
+                "parent": "meta-frameworks",
+                "repo": "remix-run/remix"
+            },
+            {
+                "name": "Astro",
+                "value": 10,
+                "parent": "meta-frameworks",
+                "repo": "withastro/astro"
+            },
+            {
+                "name": "SvelteKit",
+                "value": 10,
+                "parent": "meta-frameworks",
+                "repo": "sveltejs/kit"
+            }
+        ]
     },
     {
         "id": "ui-libraries",
         "name": "UI Libraries",
-        "color": "#3357FF",
-        "parent": "frameworks"
+        "color": "#FF7043",
+        "children": [
+            {
+                "name": "Bootstrap",
+                "value": 10,
+                "parent": "ui-libraries",
+                "repo": "twbs/bootstrap"
+            },
+            {
+                "name": "Tailwind CSS",
+                "value": 10,
+                "parent": "ui-libraries",
+                "repo": "tailwindlabs/tailwindcss"
+            },
+            {
+                "name": "Material UI",
+                "value": 10,
+                "parent": "ui-libraries",
+                "repo": "mui/material-ui"
+            },
+            {
+                "name": "Chakra UI",
+                "value": 10,
+                "parent": "ui-libraries",
+                "repo": "chakra-ui/chakra-ui"
+            },
+            {
+                "name": "PrimeReact",
+                "value": 10,
+                "parent": "ui-libraries",
+                "repo": "primefaces/primereact"
+            }
+        ]
     },
     {
         "id": "state-management",
         "name": "State Management",
-        "color": "#FF33A8",
-        "parent": "frameworks"
+        "color": "#673AB7",
+        "children": [
+            {
+                "name": "Redux",
+                "value": 10,
+                "parent": "state-management",
+                "repo": "reduxjs/redux"
+            },
+            {
+                "name": "Zustand",
+                "value": 10,
+                "parent": "state-management",
+                "repo": "pmndrs/zustand"
+            },
+            {
+                "name": "MobX",
+                "value": 10,
+                "parent": "state-management",
+                "repo": "mobxjs/mobx"
+            },
+            {
+                "name": "Recoil",
+                "value": 10,
+                "parent": "state-management",
+                "repo": "facebookexperimental/Recoil"
+            },
+            {
+                "name": "Pinia",
+                "value": 10,
+                "parent": "state-management",
+                "repo": "vuejs/pinia"
+            }
+        ]
     },
     {
         "id": "animation-libraries",
         "name": "Animation Libraries",
         "color": "#FFD700",
-        "parent": "frameworks"
+        "children": [
+            {
+                "name": "GSAP",
+                "value": 10,
+                "parent": "animation-libraries",
+                "repo": "greensock/GSAP"
+            },
+            {
+                "name": "Framer Motion",
+                "value": 10,
+                "parent": "animation-libraries",
+                "repo": "framer/motion"
+            },
+            {
+                "name": "Anime.js",
+                "value": 10,
+                "parent": "animation-libraries",
+                "repo": "juliangarnier/anime"
+            }
+        ]
     },
     {
-        "id": "react",
-        "name": "React",
-        "value": 10,
-        "parent": "meta-frameworks",
-        "repo": "facebook/react"
+        "id": "micro-front-end",
+        "name": "Micro Front-End",
+        "color": "#FFC107",
+        "children": [
+            {
+                "name": "Bit",
+                "value": 10,
+                "parent": "micro-front-end",
+                "repo": "teambit/bit"
+            },
+            {
+                "name": "Open Components (OC)",
+                "value": 10,
+                "parent": "micro-front-end",
+                "repo": "opencomponents/oc"
+            },
+            {
+                "name": "Single-SPA",
+                "value": 10,
+                "parent": "micro-front-end",
+                "repo": "single-spa/single-spa"
+            },
+            {
+                "name": "Module Federation (Webpack 5)",
+                "value": 10,
+                "parent": "micro-front-end",
+                "repo": "webpack/webpack"
+            },
+            {
+                "name": "Piral",
+                "value": 10,
+                "parent": "micro-front-end",
+                "repo": "smapiot/piral"
+            },
+            {
+                "name": "Qiankun",
+                "value": 10,
+                "parent": "micro-front-end",
+                "repo": "umijs/qiankun"
+            },
+            {
+                "name": "FrintJS",
+                "value": 10,
+                "parent": "micro-front-end",
+                "repo": "Travix-International/frint"
+            },
+            {
+                "name": "Luigi",
+                "value": 10,
+                "parent": "micro-front-end",
+                "repo": "SAP/luigi"
+            }
+        ]
     },
     {
-        "id": "angular",
-        "name": "Angular",
-        "value": 10,
-        "parent": "meta-frameworks",
-        "repo": "angular/angular"
-    },
-    {
-        "id": "vue",
-        "name": "Vue JS",
-        "value": 10,
-        "parent": "meta-frameworks",
-        "repo": "vuejs/vue"
-    },
-    {
-        "id": "svelte",
-        "name": "Svelte",
-        "value": 10,
-        "parent": "meta-frameworks",
-        "repo": "sveltejs/svelte"
-    },
-    {
-        "id": "preact",
-        "name": "Preact",
-        "value": 10,
-        "parent": "meta-frameworks",
-        "repo": "preactjs/preact"
-    },
-    {
-        "id": "nextjs",
-        "name": "Next.js",
-        "value": 10,
-        "parent": "meta-frameworks",
-        "repo": "vercel/next.js"
-    },
-    {
-        "id": "nuxtjs",
-        "name": "Nuxt.js",
-        "value": 10,
-        "parent": "meta-frameworks",
-        "repo": "nuxt/nuxt"
-    },
-    {
-        "id": "remix",
-        "name": "Remix",
-        "value": 10,
-        "parent": "meta-frameworks",
-        "repo": "remix-run/remix"
-    },
-    {
-        "id": "astro",
-        "name": "Astro",
-        "value": 10,
-        "parent": "meta-frameworks",
-        "repo": "withastro/astro"
-    },
-    {
-        "id": "sveltekit",
-        "name": "SvelteKit",
-        "value": 10,
-        "parent": "meta-frameworks",
-        "repo": "sveltejs/kit"
-    },
-    {
-        "id": "bootstrap",
-        "name": "Bootstrap",
-        "value": 10,
-        "parent": "ui-libraries",
-        "repo": "twbs/bootstrap"
-    },
-    {
-        "id": "tailwind",
-        "name": "Tailwind CSS",
-        "value": 10,
-        "parent": "ui-libraries",
-        "repo": "tailwindlabs/tailwindcss"
-    },
-    {
-        "id": "material-ui",
-        "name": "Material UI",
-        "value": 10,
-        "parent": "ui-libraries",
-        "repo": "mui/material-ui"
-    },
-    {
-        "id": "chakra-ui",
-        "name": "Chakra UI",
-        "value": 10,
-        "parent": "ui-libraries",
-        "repo": "chakra-ui/chakra-ui"
-    },
-    {
-        "id": "primereact",
-        "name": "PrimeReact",
-        "value": 10,
-        "parent": "ui-libraries",
-        "repo": "primefaces/primereact"
-    },
-    {
-        "id": "redux",
-        "name": "Redux",
-        "value": 10,
-        "parent": "state-management",
-        "repo": "reduxjs/redux"
-    },
-    {
-        "id": "zustand",
-        "name": "Zustand",
-        "value": 10,
-        "parent": "state-management",
-        "repo": "pmndrs/zustand"
-    },
-    {
-        "id": "mobx",
-        "name": "MobX",
-        "value": 10,
-        "parent": "state-management",
-        "repo": "mobxjs/mobx"
-    },
-    {
-        "id": "recoil",
-        "name": "Recoil",
-        "value": 10,
-        "parent": "state-management",
-        "repo": "facebookexperimental/Recoil"
-    },
-    {
-        "id": "pinia",
-        "name": "Pinia",
-        "value": 10,
-        "parent": "state-management",
-        "repo": "vuejs/pinia"
-    },
-    {
-        "id": "gsap",
-        "name": "GSAP",
-        "value": 10,
-        "parent": "animation-libraries",
-        "repo": "greensock/GSAP"
-    },
-    {
-        "id": "framer-motion",
-        "name": "Framer Motion",
-        "value": 10,
-        "parent": "animation-libraries",
-        "repo": "framer/motion"
-    },
-    {
-        "id": "animejs",
-        "name": "Anime.js",
-        "value": 10,
-        "parent": "animation-libraries",
-        "repo": "juliangarnier/anime"
+        "id": "other",
+        "name": "Other",
+        "color": "#607D8B",
+        "children": [
+            {
+                "name": "HTMX ",
+                "value": 10,
+                "parent": "other",
+                "repo": "bigskysoftware/htmx"
+            }
+        ]
     }
 ]
