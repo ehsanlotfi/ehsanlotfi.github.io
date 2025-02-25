@@ -5,12 +5,12 @@ function App()
 
   const cats = [
     {
-      "title": "Front-end",
-      "path": "front-end"
-    },
-    {
       "title": "Back-end",
       "path": "back-end"
+    },
+    {
+      "title": "Front-end",
+      "path": "front-end"
     },
     {
       "title": "Android / IOS",

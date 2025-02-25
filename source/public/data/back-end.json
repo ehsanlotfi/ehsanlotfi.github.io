@@ -1,32 +1,255 @@
 [
     {
-        "name": "Django",
-        "repo": "django/django",
-        "value": 10
+        "id": "frameworks",
+        "name": "Backend Frameworks",
+        "color": "#3F51B5",
+        "children": [
+            {
+                "name": "Express.js",
+                "value": 10,
+                "parent": "frameworks",
+                "repo": "expressjs/express"
+            },
+            {
+                "name": "NestJS",
+                "value": 10,
+                "parent": "frameworks",
+                "repo": "nestjs/nest"
+            },
+            {
+                "name": "Fastify",
+                "value": 10,
+                "parent": "frameworks",
+                "repo": "fastify/fastify"
+            },
+            {
+                "name": "Koa",
+                "value": 10,
+                "parent": "frameworks",
+                "repo": "koajs/koa"
+            },
+            {
+                "name": "Hapi",
+                "value": 10,
+                "parent": "frameworks",
+                "repo": "hapijs/hapi"
+            },
+            {
+                "name": "Laravel",
+                "value": 10,
+                "parent": "frameworks",
+                "repo": "laravel/laravel"
+            },
+            {
+                "name": "Symfony",
+                "value": 10,
+                "parent": "frameworks",
+                "repo": "symfony/symfony"
+            },
+            {
+                "name": "Spring Boot",
+                "value": 10,
+                "parent": "frameworks",
+                "repo": "spring-projects/spring-boot"
+            },
+            {
+                "name": "Django",
+                "value": 10,
+                "parent": "frameworks",
+                "repo": "django/django"
+            },
+            {
+                "name": "Flask",
+                "value": 10,
+                "parent": "frameworks",
+                "repo": "pallets/flask"
+            },
+            {
+                "name": "Ruby on Rails",
+                "value": 10,
+                "parent": "frameworks",
+                "repo": "rails/rails"
+            }
+        ]
     },
     {
-        "name": "Laravel",
-        "repo": "laravel/laravel",
-        "value": 10
+        "id": "orm-libraries",
+        "name": "ORM Libraries",
+        "color": "#009688",
+        "children": [
+            {
+                "name": "TypeORM",
+                "value": 10,
+                "parent": "orm-libraries",
+                "repo": "typeorm/typeorm"
+            },
+            {
+                "name": "Sequelize",
+                "value": 10,
+                "parent": "orm-libraries",
+                "repo": "sequelize/sequelize"
+            },
+            {
+                "name": "Prisma",
+                "value": 10,
+                "parent": "orm-libraries",
+                "repo": "prisma/prisma"
+            },
+            {
+                "name": "Doctrine",
+                "value": 10,
+                "parent": "orm-libraries",
+                "repo": "doctrine/orm"
+            },
+            {
+                "name": "Eloquent",
+                "value": 10,
+                "parent": "orm-libraries",
+                "repo": "laravel/framework"
+            }
+        ]
     },
     {
-        "name": "Ruby on Rails",
-        "repo": "rails/rails",
-        "value": 10
+        "id": "api-tools",
+        "name": "API Tools",
+        "color": "#FF5722",
+        "children": [
+            {
+                "name": "GraphQL",
+                "value": 10,
+                "parent": "api-tools",
+                "repo": "graphql/graphql-js"
+            },
+            {
+                "name": "Apollo Server",
+                "value": 10,
+                "parent": "api-tools",
+                "repo": "apollographql/apollo-server"
+            },
+            {
+                "name": "gRPC",
+                "value": 10,
+                "parent": "api-tools",
+                "repo": "grpc/grpc"
+            },
+            {
+                "name": "tRPC",
+                "value": 10,
+                "parent": "api-tools",
+                "repo": "trpc/trpc"
+            },
+            {
+                "name": "OpenAPI (Swagger)",
+                "value": 10,
+                "parent": "api-tools",
+                "repo": "swagger-api/swagger-ui"
+            }
+        ]
     },
     {
-        "name": "ASP.NET",
-        "repo": "dotnet/aspnetcore",
-        "value": 10
+        "id": "microservices",
+        "name": "Microservices Frameworks",
+        "color": "#8BC34A",
+        "children": [
+            {
+                "name": "Moleculer",
+                "value": 10,
+                "parent": "microservices",
+                "repo": "moleculerjs/moleculer"
+            },
+            {
+                "name": "Axon Framework",
+                "value": 10,
+                "parent": "microservices",
+                "repo": "AxonFramework/AxonFramework"
+            },
+            {
+                "name": "ServiceStack",
+                "value": 10,
+                "parent": "microservices",
+                "repo": "ServiceStack/ServiceStack"
+            },
+            {
+                "name": "Seneca",
+                "value": 10,
+                "parent": "microservices",
+                "repo": "senecajs/seneca"
+            }
+        ]
     },
     {
-        "name": "Spring",
-        "repo": "spring-projects/spring-framework",
-        "value": 10
+        "id": "task-queues",
+        "name": "Task Queues",
+        "color": "#FFC107",
+        "children": [
+            {
+                "name": "BullMQ",
+                "value": 10,
+                "parent": "task-queues",
+                "repo": "taskforcesh/bullmq"
+            },
+            {
+                "name": "RabbitMQ",
+                "value": 10,
+                "parent": "task-queues",
+                "repo": "rabbitmq/rabbitmq-server"
+            },
+            {
+                "name": "Celery",
+                "value": 10,
+                "parent": "task-queues",
+                "repo": "celery/celery"
+            },
+            {
+                "name": "Resque",
+                "value": 10,
+                "parent": "task-queues",
+                "repo": "resque/resque"
+            }
+        ]
     },
     {
-        "name": "Express.js",
-        "repo": "expressjs/express",
-        "value": 10
+        "id": "caching",
+        "name": "Caching Tools",
+        "color": "#9C27B0",
+        "children": [
+            {
+                "name": "Redis",
+                "value": 10,
+                "parent": "caching",
+                "repo": "redis/redis"
+            },
+            {
+                "name": "Memcached",
+                "value": 10,
+                "parent": "caching",
+                "repo": "memcached/memcached"
+            },
+            {
+                "name": "Hazelcast",
+                "value": 10,
+                "parent": "caching",
+                "repo": "hazelcast/hazelcast"
+            }
+        ]
+    },
+    {
+        "id": "other",
+        "name": "Other",
+        "color": "#607D8B",
+        "children": [
+            {
+                "name": "Socket.IO",
+                "value": 10,
+                "parent": "other",
+                "repo": "socketio/socket.io"
+            },
+            {
+                "name": "PM2",
+                "value": 10,
+                "parent": "other",
+                "repo": "Unitech/pm2"
+            }
+        ]
     }
 ]
