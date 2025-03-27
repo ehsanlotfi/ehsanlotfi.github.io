@@ -28,5 +28,10 @@
         "name": "AWS Cli",
         "repo": "aws/aws-cli",
         "value": 10
+    },
+    {
+        "name": "Grafana",
+        "repo": "grafana/grafana",
+        "value": 10
     }
 ]
