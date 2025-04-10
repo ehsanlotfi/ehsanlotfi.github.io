@@ -11,6 +11,8 @@ if (typeof TreemapModule === "function")
     TreemapModule(Highcharts);
 }
 
+
+
 const generateGuid = () =>
 {
     const hexDigits = "0123456789abcdef";
@@ -75,6 +77,29 @@ const TreeChart = () =>
         offcanvas.toggle();
     };
 
+    const colors = [
+        "#0000FF", // Blue
+        "#00FF00", // Lime (Green)
+        "#FF0000", // Red
+        "#FFFF00", // Yellow
+        "#FFA500", // Orange
+        "#800080", // Purple
+        "#00FFFF", // Cyan / Aqua
+        "#FFC0CB", // Pink
+        "#A52A2A", // Brown
+        "#808080", // Gray
+        "#000000", // Black
+        "#FFFFFF", // White
+        "#008000", // Dark Green
+        "#ADD8E6", // Light Blue
+        "#FF00FF", // Magenta / Fuchsia
+        "#C0C0C0", // Silver
+        "#800000", // Maroon
+        "#808000", // Olive
+        "#000080", // Navy
+        "#F5DEB3", // Wheat
+    ];
+
     useEffect(() =>
     {
         fetch(`/data/${category}.json`)
@@ -100,13 +125,15 @@ const TreeChart = () =>
                         .map((f) => `repo:${f.repo}`);
                 }
 
+                data.forEach((parent, parentIndex) =>
+                {
+                    parent.color = colors[parentIndex];
+                })
+
                 let flatData = flattenNestedItemsWithParentPath(data);
-                let colorsIndex = [
-                    ...new Set(flatData.filter((f) => f.parent.length === 36).map((f) => f.parent)),
-                ];
 
                 // setChartData(flatData);
-                // setLoading(false);
+                //setLoading(false);
 
                 return fetch(
                     `https://api.github.com/search/repositories?q=${repos.join("+")}&sort=stars&order=desc&per_page=${repos.length}`,
@@ -115,17 +142,92 @@ const TreeChart = () =>
                     .then((res) => res.json())
                     .then((result) =>
                     {
+                        var normalize = (value, inMin, inMax, outMin, outMax) =>
+                        {
+                            let result = Math.round(((value - inMin) * (outMax - outMin)) / (inMax - inMin) + outMin);
+                            switch (result)
+                            {
+                                case 15:
+                                    result = "FF";
+                                    break;
+                                case 14:
+                                    result = "EE";
+                                    break;
+                                case 13:
+                                    result = "DD";
+                                    break;
+                                case 12:
+                                    result = "CC";
+                                    break;
+                                case 11:
+                                    result = "BB";
+                                    break;
+                                case 10:
+                                    result = "AA";
+                                    break;
+                                default:
+                                    result = result.toString() + result.toString();
+                                    break;
+                            }
+                            return result;
+                        }
+
                         flatData.forEach((element) =>
                         {
-                            const foundRepo = result.items.find((f) => element.repo === f.full_name);
+                            const foundRepo = result.items.find((f) => (element && element.repo) === f.full_name);
                             if (foundRepo)
                             {
                                 element.meta = foundRepo;
                                 element.value = foundRepo.stargazers_count;
-                                element.color =
-                                    Highcharts.getOptions().colors[colorsIndex.findIndex((f) => f === element.parent)];
                             }
                         });
+
+                        // Precompute the parent values for all items
+                        const parentValues = flatData.reduce((acc, item) =>
+                        {
+                            if (item.parent)
+                            {
+                                if (!acc[item.parent])
+                                {
+                                    acc[item.parent] = [];
+                                }
+                                acc[item.parent].push(item.value);
+                            }
+                            return acc;
+                        }, {});
+
+                        flatData.forEach(item =>
+                        {
+                            if (item.parent)
+                            {
+                                const values = parentValues[item.parent];
+                                const [max, min] = [Math.max(...values), Math.min(...values)];
+                                const t = normalize(item.value, min, max, 0, 15);
+                                const parentObj = flatData.find(f => f.id === item.parent);
+
+                                if (parentObj && parentObj.color)
+                                {
+                                    item.color = parentObj.color + t;
+                                }
+                            }
+                        });
+
+
+                        //const [max, min] = [Math.max(...parent.children.map(f => f.value)), Math.min(...parent.children.map(f => f.value))];
+                        // flatData.forEach((parent, parentIndex) =>
+                        //     {
+                        //         if(!(parent.children && parent.children.length)) return;
+
+
+
+
+
+                        //         parent.children.forEach((item, index) =>
+                        //         {
+                        //             const t = normalize(item.value, min, max, 0, 15);
+                        //             item.color = parent.color + t;
+                        //         })
+                        //     })
 
                         setChartData(flatData);
                         setLoading(false);
@@ -137,6 +239,8 @@ const TreeChart = () =>
                 console.error("Error fetching data:", error);
                 setLoading(false);
             });
+
+
     }, [category]);
 
     useEffect(() =>
@@ -184,7 +288,9 @@ const TreeChart = () =>
                         {
                             if (toggleOffcanvasRef && !(event.point && event.point.children && event.point.children.length))
                             {
-                                toggleOffcanvasRef(event.point.meta.full_name);
+                                if(event.point && event.point.meta) {
+                                    toggleOffcanvasRef(event.point.meta.full_name);
+                                }
                             }
                         }
                     }
@@ -210,9 +316,14 @@ const TreeChart = () =>
                     level: 1,
                     dataLabels: {
                         enabled: true,
-                        style: {
-                            fontSize: '20px',
-                            color: "#ffffff"
+                        style: function() {
+                            console.log(this)
+                            return {
+                                opacity: 0.3,
+                                fontSize: '20px',
+                                color: "#ffffff",
+                                fontWeight: 'bold'
+                            }
                         }
                     },
                     borderWidth: 3,
@@ -235,7 +346,7 @@ const TreeChart = () =>
             <Link className="back-btn" to={'/'}><img src="/back-icon.png"></img></Link>
             {loading ? (
                 <div className="chart-loading-container">
-                    <img src="/loading.gif"></img>
+                    <img src="/loading.svg"></img>
                 </div>
             ) : (
                 <>

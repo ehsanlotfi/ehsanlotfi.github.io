@@ -1,7 +1,41 @@
 [
     {
+        "id": "languages",
+        "name": "Languages",
+        "color": "#0000FF",
+        "children": [
+            { "name": "Python", "value": 98, "parent": "languages" },
+            { "name": "JavaScript", "value": 95, "parent": "languages" },
+            { "name": "TypeScript", "value": 89, "parent": "languages" },
+            { "name": "Java", "value": 90, "parent": "languages" },
+            { "name": "C#", "value": 85, "parent": "languages" },
+            { "name": "C++", "value": 75, "parent": "languages" },
+            { "name": "C", "value": 70, "parent": "languages" },
+            { "name": "PHP", "value": 60, "parent": "languages" },
+            { "name": "Go", "value": 68, "parent": "languages" },
+            { "name": "Rust", "value": 72, "parent": "languages" },
+            { "name": "Kotlin", "value": 65, "parent": "languages" },
+            { "name": "Ruby", "value": 50, "parent": "languages" },
+            { "name": "Lua", "value": 35, "parent": "languages" },
+            { "name": "Dart", "value": 55, "parent": "languages" },
+            { "name": "Assembly", "value": 30, "parent": "languages" },
+            { "name": "Swift", "value": 60, "parent": "languages" },
+            { "name": "R", "value": 45, "parent": "languages" },
+            { "name": "MATLAB", "value": 35, "parent": "languages" },
+            { "name": "Groovy", "value": 28, "parent": "languages" },
+            { "name": "Delphi", "value": 20, "parent": "languages" },
+            { "name": "Elixir", "value": 25, "parent": "languages" },
+            { "name": "Objective-C", "value": 30, "parent": "languages" },
+            { "name": "Scala", "value": 40, "parent": "languages" },
+            { "name": "Perl", "value": 25, "parent": "languages" },
+            { "name": "Haskell", "value": 20, "parent": "languages" },
+            { "name": "Shell", "value": 50, "parent": "languages" }
+        ]
+        
+    },
+    {
         "id": "frameworks",
-        "name": "Backend Frameworks",
+        "name": "Frameworks",
         "color": "#3F51B5",
         "children": [
             {
